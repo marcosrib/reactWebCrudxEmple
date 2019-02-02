@@ -1,0 +1,49 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "produto": "sabao",
+      "categoria": "1"
+    },
+    {
+      "id": 2,
+      "produto": "arroz",
+      "categoria": "2"
+    },
+    {
+      "produto": "rfrfr",
+      "categoria": "1",
+      "id": 3
+    },
+    {
+      "produto": "Marcarrão",
+      "categoria": "2",
+      "id": 4
+    },
+    {
+      "produto": "shampoo",
+      "categoria": "1",
+      "id": 5
+    },
+    {
+      "produto": "sabão liquido",
+      "categoria": "1",
+      "id": 6
+    },
+    {
+      "produto": "farinha",
+      "categoria": "2",
+      "id": 7
+    }
+  ],
+  "categorias": [
+    {
+      "categorias": "Limpeza",
+      "id": 1
+    },
+    {
+      "categorias": "Alimentos",
+      "id": 2
+    }
+  ]
+}
