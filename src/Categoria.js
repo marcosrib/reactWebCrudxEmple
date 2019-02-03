@@ -2,18 +2,9 @@ import React, { Component } from 'react'
 import Axios from 'axios';
 
 class Categoria extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            produtos: [],
-            categorias: []
-        }
-    }
+   
     loadData=(id)=> {
-        Axios.get('http://localhost:3001/produtos?categoria='+id)
-        .then(res => {
-            this.setState({ produtos: res.data })
-        })
+       this.props.loadProduto(id)
         Axios.get('http://localhost:3001/categorias/'+id)
         .then(res => {
             this.setState({ categorias: res.data })
@@ -36,8 +27,8 @@ class Categoria extends Component {
         return (
             <div>
             
-                <h1>{this.state.categorias.categorias}</h1>
-                {this.state.produtos.map(this.renderProduto)}
+                <h1>{this.props.categorias.categorias}</h1>
+                {this.props.produtos.map(this.renderProduto)}
             </div>
         )
     }

@@ -34,6 +34,11 @@
       "produto": "farinha",
       "categoria": "2",
       "id": 7
+    },
+    {
+      "produto": "Uva",
+      "categoria": "3",
+      "id": 8
     }
   ],
   "categorias": [
@@ -44,6 +49,10 @@
     {
       "categorias": "Alimentos",
       "id": 2
+    },
+    {
+      "categorias": "Frutas",
+      "id": 3
     }
   ]
 }

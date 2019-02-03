@@ -9,7 +9,8 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = ({
-      categorias: []
+      categorias: [],
+      produtos: [],
     })
   }
   loadCategoria = () => {
@@ -34,21 +35,33 @@ class App extends Component {
     this.props.Api.saveCategoria({
       categorias: valor
     }).then(res => {
-        this.loadCategoria()
-      })
+      this.loadCategoria()
+    })
 
   }
   handleEditCategoria = (valor) => {
     console.log(valor)
     this.props.Api.editCategoria(valor)
-    .then(res => {
+      .then(res => {
         this.loadCategoria()
       })
 
   }
-createProduto =(produto) => {
-  return this.props.Api.createProduto(produto)
-}
+  createProduto = (produto) => {
+    return this.props.Api.createProduto(produto)
+  }
+  loadProduto = (id) => {
+    this.props.Api.loadCategoriaProdutoId(id)
+      .then(res => {
+        this.setState({ produtos: res.data })
+      })
+  }
+  loadCategoriaId = (id) => {
+    this.props.Api.loadCategoriaId(id)
+      .then(res => {
+        this.setState({ categorias: res.data })
+      })
+  }
 
   render() {
 
@@ -78,10 +91,14 @@ createProduto =(produto) => {
                 <Produtos {...props}
                   loadCategoria={this.loadCategoria}
                   categorias={this.state.categorias}
+                  categoriasId={this.state.categoriasId}
+                  produtos={this.state.produtos}
                   removeCategoria={this.removeCategoria}
                   handleCategoria={this.handleCategoria}
                   handleEditCategoria={this.handleEditCategoria}
                   createProduto={this.createProduto}
+                  loadProduto={this.loadProduto}
+                  loadCategoriaId={this.loadCategoriaId}
                 />)
             }
             }
